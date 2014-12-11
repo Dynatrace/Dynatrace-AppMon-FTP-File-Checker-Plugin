@@ -20,15 +20,10 @@ This plugin checks the existence of a given file on an FTP Server and returns th
 
 ## Provided Measures
 
-Measure
-
-Description
-
-FileExists
-
-1; if the specified file is found on the FTP Server
-
-0; if the specified file is not found
+| Measure | Description
+| :---    | :---
+| FileExists | 1; if the specified file is found on the FTP Server
+| | 0; if the specified file is not found
 
 ## Screenshot of the measures screen
 
@@ -38,51 +33,13 @@ FileExists
 
 The following properties need to be defined when setting up this monitor
 
-**Property Name**
-
-**Type**
-
-**Default Value**
-
-**Notes**
-
-FTP Server Hostname
-
-String
-
-localhost
-
-hostname or IP address
-
-FTP Server Port
-
-Long
-
-21
-
-changing this to 22 will not invoke SSL. SSL is currently not supported by this plugin but could easily be added.
-
-FTP Server Username
-
-String
-
-FTP Server Password
-
-String
-
-Directory
-
-String
-
-/
-
-If left blank, the filename is checked in the default login directory. To check on the file located in the **foo** directory, this field would contain **/foo**.
-
-Filename
-
-String
-
-fileToCheck.txt
+| Property Name | Type | Default Value | Notes
+| :------------ | :--- | :------------ | :----
+|FTP Server Hostname|String|localhost|hostname or IP address
+|FTP Server Port|Long|21|changing this to 22 will not invoke SSL. SSL is currently not supported by this plugin but could easily be added.
+|FTP Server Username|String|FTP Server Password|String
+|Directory|String|/|If left blank, the filename is checked in the default login directory. To check on the file located in the **foo** directory, this field would contain **/foo**.
+|Filename|String|fileToCheck.txt||
 
 ## Screenshot of the Configuration page
 
