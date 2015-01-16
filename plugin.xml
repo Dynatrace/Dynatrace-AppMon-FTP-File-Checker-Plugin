@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 5.6.0 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.dynatrace.FTPFileChecker" name="FTP File Checker">
+    <information>
+      <category value="" />
+      <displayname value="FTP File Checker" />
+      <description value="This plugin checks for the existence of a specified file on a specified FTP Server and returns a 0 if it's not found, a 1 if it's found. " />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="host" label="FTP Server HostName" type="string" description="The hostname of the FTP Server.  &#xA;" default="localhost" multiline="false" />
+      <property key="port" label="FTP Server Port" type="long" description="Port number used to connect to FTP Server.&#xA;Port 21 is the default.&#xA;" default="21" />
+      <property key="username" label="FTP Server Username" type="string" description="My property description ..." default="default" multiline="false" />
+      <property key="password" label="FTP Server password" type="password" description="My property description ..." default="" />
+      <property key="directory" label="Directory" type="string" description="This is the directory path of where the file is located.  This path is relative to the home directory of the specified account" default="" multiline="false" />
+      <property key="filename" label="Filename" type="string" description="My property description ..." default="FileToCheck.txt" multiline="false" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="com.dynatrace.FTPFileChecker.monitor" name="FTP File Checker">
+    <plugin configid="com.dynatrace.FTPFileChecker" class="com.compuware.ftpFileChecker.FTPFileChecker" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.FTPFileChecker.monitor.metricgroup1" name="FTPFileCheckerMetrics">
+    <metricgroup monitorid="com.dynatrace.FTPFileChecker.monitor">
+      <metric defaultrate="purepath" name="FileExists" unit="occurrences" description="My metric description ..." />
+    </metricgroup>
+  </extension>
+</plugin>
+

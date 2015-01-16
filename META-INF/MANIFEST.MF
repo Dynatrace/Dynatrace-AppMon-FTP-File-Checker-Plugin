@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Require-Bundle: com.dynatrace.diagnostics.sdk
+Bundle-Vendor: Compuware
+Bundle-ClassPath: .,lib/ftp4j-1.7.2.jar
+Bundle-Version: 1.0.2
+Bundle-Name: FTP File Checker
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.dynatrace.FTPFileChecker;singleton:=true
+
